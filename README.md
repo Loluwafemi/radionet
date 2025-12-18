@@ -1,8 +1,8 @@
-# 📻 Radio Player - Modern Glassmorphic Web App
+# 📻 RadioNet - Modern Glassmorphic Web App
 
 <div align="center">
 
-![Radio Player Banner](https://via.placeholder.com/1200x400/1a1a1a/ff6666?text=Radio+Player)
+![RadioNet Banner](https://via.placeholder.com/1200x400/1a1a1a/ff6666?text=Radio+Player)
 
 **A beautiful, modern radio streaming app with real-time audio visualization**
 
@@ -367,7 +367,7 @@ T           - Toggle Theme
 
 ##### Desktop (Chrome/Edge)
 1. Look for the install icon in the address bar
-2. Click "Install Radio Player"
+2. Click "Install RadioNet"
 3. App opens in standalone window
 
 ---
