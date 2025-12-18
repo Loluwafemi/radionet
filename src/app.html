@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Modern glassmorphic radio player with PWA support" />
+		<meta name="theme-color" content="#1a1a1a" />
+		
+		<!-- Open Graph -->
+		<meta property="og:title" content="Radio Player" />
+		<meta property="og:description" content="Stream your favorite radio stations" />
+		<meta property="og:type" content="website" />
+		
+		<!-- PWA -->
+		<link rel="manifest" href="./manifest.json" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
