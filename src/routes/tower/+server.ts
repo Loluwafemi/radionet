@@ -6,8 +6,6 @@ export const POST: RequestHandler = async ({request}) => {
 
     const cloneRequest = request.clone();
 
-    console.log("hellow");
-    
 
     const  { language, countryCode, tagList } = await cloneRequest.json()
 
@@ -16,6 +14,9 @@ export const POST: RequestHandler = async ({request}) => {
         message: 'Invalid request parameters'
     })
 
+    
+    console.log("Searching radio stations");
+    
     try {
 
         // await api.getStationsBy(StationSearchType.byTag, 'jazz')
@@ -33,6 +34,8 @@ export const POST: RequestHandler = async ({request}) => {
         return json({status: false, message: 'No Stations Found'});
         
     } catch (error) {
+        console.log("Error while Searching radio stations");
+
         return json({
         status: false,
         message: 'Error Caught. Try connect to internet.'
