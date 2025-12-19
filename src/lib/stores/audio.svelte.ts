@@ -1,7 +1,8 @@
 import { browser } from '$app/environment';
+import type { Station } from '$lib/tower/type';
 
 class AudioStore {
-	frequency = $state(98.0);
+	station = $state<Station>();
 	isPlaying = $state(false);
 	volume = $state(0.7);
 	searchQuery = $state('');
@@ -15,8 +16,8 @@ class AudioStore {
 	// Derived stream URL
 	streamUrl = $derived("");
 
-	setStationURL(url: string) {
-		this.streamUrl = url
+	setStationURL(station: Station) {
+		this.streamUrl = station.url
 	}
 
 	togglePlay() {
@@ -33,6 +34,7 @@ class AudioStore {
 
 	// Initialize Web Audio API
 	initAudioContext(audioEl: HTMLAudioElement) {
+		
 		if (!browser || this.audioContext) return;
 
 		try {

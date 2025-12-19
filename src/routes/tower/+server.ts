@@ -30,6 +30,7 @@ export const POST: RequestHandler = async ({request}) => {
             })
 
         if (stations.length > 0) return json({status: true, stations});
+        console.log("Found stations: ", stations);
         
         return json({status: false, message: 'No Stations Found'});
         

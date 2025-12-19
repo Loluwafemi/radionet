@@ -1,4 +1,4 @@
-# 📻 RadioNet - Modern Glassmorphic Web App
+# 📻 RadioNet - Modern Radio Streaming App
 
 <div align="center">
 
@@ -15,20 +15,14 @@
 
 </div>
 
+
 ---
-
 ## 🎨 Screenshots
-
-### Light Theme
-```
-
-```
-
-### Dark Theme
-```
-
-```
-
+| Light Theme | Dark Theme |
+| --- | --- |
+| [Alt](ImageUrl) | [Alt](ImageUrl) |
+| --- | --- |
+| Information | Information |
 ---
 
 ## ✨ Features

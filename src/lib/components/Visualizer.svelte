@@ -7,8 +7,10 @@
 
 	onMount(() => {
 		const ctx = canvas.getContext('2d');
+
 		if (!ctx || !audio.analyser) return;
 
+		
 		const bufferLength = audio.analyser.frequencyBinCount;
 		const dataArray = new Uint8Array(bufferLength);
 
