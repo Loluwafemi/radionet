@@ -2,6 +2,8 @@
 	import '../app.css';
 	import { theme } from '$lib/stores/theme.svelte';
 	import { onMount } from 'svelte';
+	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+
 
 	let { children } = $props();
 
@@ -9,7 +11,12 @@
 		// Apply theme on mount
 		theme.isDark;
 	});
+
+
+	injectSpeedInsights();
 </script>
+
+
 
 <div class="min-h-screen transition-colors duration-300">
 	<button
