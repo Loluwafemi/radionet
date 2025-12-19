@@ -84,14 +84,14 @@
 </script>
 
 <svelte:head>
-	<title>Radio Player - Stream Your Favorite Stations</title>
-	<meta name="description" content="Modern glassmorphic radio player with real-time visualization" />
+	<title>RadioNet - Stream Your Favorite Stations</title>
+	<meta name="description" content="Modern internet radio player with real-time visualization" />
 </svelte:head>
 
 <div class="container mx-auto px-4 py-8 max-w-2xl">
 	<!-- Header -->
 	<div class="flex items-center justify-between mb-8">
-		<h1 class="text-2xl font-bold">Radio Player</h1>
+		<h1 class="text-2xl font-bold">RadioNet</h1>
 		<a
 			href="/settings"
 			class="glass rounded-full w-10 h-10 flex items-center justify-center hover:bg-white/20"

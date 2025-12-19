@@ -8,9 +8,9 @@ export default defineConfig({
 		SvelteKitPWA({
 			registerType: 'autoUpdate',
 			manifest: {
-				name: 'Radio Player',
-				short_name: 'Radio',
-				description: 'Modern glassmorphic radio player',
+				name: 'Radio Net',
+				short_name: 'RadioNet',
+				description: 'Modern Internet radio player',
 				theme_color: '#1a1a1a',
 				background_color: '#1a1a1a',
 				display: 'standalone',
