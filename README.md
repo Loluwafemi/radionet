@@ -17,7 +17,7 @@
 
 
 ## 🎨 Screenshots
-<div style="display: flex; justify-content: center; flex-direction: row; align-items: center;">
+<div align="center" style="display: flex;">
 <img src="./static/radio-white.png" alt="Description of image" width="200" />
 
 <img src="./static/radio-dark.png" alt="Description of image" width="200" />
