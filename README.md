@@ -1,4 +1,4 @@
-# 📻 RadioNet - Modern Radio Streaming App
+## 📻 RadioNet - Modern Radio Streaming App
 
 <div align="center">
 
@@ -16,14 +16,14 @@
 </div>
 
 
----
 ## 🎨 Screenshots
-| Light Theme | Dark Theme |
-| --- | --- |
-| [Alt](ImageUrl) | [Alt](ImageUrl) |
-| --- | --- |
-| Information | Information |
----
+<div style="display: flex; justify-content: center; flex-direction: row; align-items: center;">
+<img src="./static/radio-white.png" alt="Description of image" width="200" />
+
+<img src="./static/radio-dark.png" alt="Description of image" width="200" />
+</div>
+
+
 
 ## ✨ Features
 
@@ -60,7 +60,6 @@
 ## 📋 Table of Contents
 
 - [Installation](#installation)
-- [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [API Integration](#api-integration)
 - [Usage Guide](#usage-guide)
@@ -96,45 +95,6 @@ npm run dev
 # Open browser to http://localhost:5173
 ```
 
-### Full Installation
-
-```bash
-# 1. Create new SvelteKit project
-npm create svelte@latest radio-player
-cd radio-player
-
-# 2. Install core dependencies
-npm install
-
-# 3. Install additional packages
-npm install -D @vite-pwa/sveltekit tailwindcss postcss autoprefixer
-npm install -D @sveltejs/adapter-static
-npm install radio-browser-api
-
-# 4. Initialize Tailwind CSS
-npx tailwindcss init -p
-
-# 5. Copy project files (or clone from repo)
-# - Copy all files from the artifact to respective directories
-# - Update svelte.config.js, vite.config.ts, tailwind.config.js
-
-# 6. Generate PWA icons
-# Place a 512x512 base icon in static/icon-base.png, then:
-cd static
-convert icon-base.png -resize 72x72 icon-72.png
-convert icon-base.png -resize 96x96 icon-96.png
-convert icon-base.png -resize 128x128 icon-128.png
-convert icon-base.png -resize 144x144 icon-144.png
-convert icon-base.png -resize 152x152 icon-152.png
-convert icon-base.png -resize 192x192 icon-192.png
-convert icon-base.png -resize 384x384 icon-384.png
-convert icon-base.png -resize 512x512 icon-512.png
-
-# 7. Run development server
-npm run dev
-```
-
----
 
 ## 📁 Project Structure
 
@@ -234,35 +194,6 @@ export async function getStationsByCountry(country: string) {
 }
 ```
 
-### Using Station URLs
-
-The project uses `setStationUrl()` instead of `setFrequency()` to handle real radio streams:
-
-```typescript
-// src/lib/stores/audio.svelte.ts
-class AudioStore {
-  stationUrl = $state('');
-  stationName = $state('');
-  isPlaying = $state(false);
-  volume = $state(0.7);
-
-  setStationUrl(url: string, name: string = '') {
-    this.stationUrl = url;
-    this.stationName = name;
-    
-    // Update audio element source
-    if (this.audioElement) {
-      this.audioElement.src = url;
-      if (this.isPlaying) {
-        this.audioElement.play();
-      }
-    }
-  }
-
-  // ... rest of the store
-}
-```
-
 ### Example Usage
 
 ```svelte
@@ -330,20 +261,6 @@ S           - Open Search
 T           - Toggle Theme
 ```
 
-#### Embed on Your Website
-
-1. Go to **Settings** → **Embed Player**
-2. Configure options (station, autoplay, theme)
-3. Copy the generated code
-4. Paste into your HTML:
-
-```html
-<!-- Embed with specific station -->
-<script src="https://yourapp.com/embed.js?station=classic-rock&autoplay=false"></script>
-
-<!-- Embed with custom styling -->
-<script src="https://yourapp.com/embed.js?station=jazz&theme=dark"></script>
-```
 
 #### Mobile App Installation
 
@@ -366,23 +283,6 @@ T           - Toggle Theme
 
 ---
 
-## ⚙️ Configuration
-
-### Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-# Radio Browser API
-PUBLIC_APP_NAME=YourRadioApp
-PUBLIC_APP_VERSION=1.0.0
-
-# Analytics (optional)
-PUBLIC_GA_ID=G-XXXXXXXXXX
-
-# API Rate Limiting
-PUBLIC_API_CACHE_TIME=3600
-```
 
 ### Custom Configuration
 
@@ -400,44 +300,6 @@ class PreferencesStore {
   // Add custom preferences
   preferredLanguage = $state('en');
   preferredCountry = $state('US');
-}
-```
-
-#### Customize Visualizer
-
-```typescript
-// src/lib/utils/audio.ts
-export const DEFAULT_VISUALIZER_CONFIG = {
-  fftSize: 2048,              // Frequency resolution (512, 1024, 2048, 4096)
-  smoothingTimeConstant: 0.8, // Smoothing (0.0 - 1.0)
-  minDecibels: -90,           // Minimum dB level
-  maxDecibels: -10,           // Maximum dB level
-  barCount: 64,               // Number of bars to display
-  barSpacing: 2,              // Space between bars (px)
-  colors: {                   // Custom color scheme
-    primary: '#ff6666',
-    secondary: '#ff4444'
-  }
-};
-```
-
-#### Modify Glassmorphic Style
-
-```css
-/* src/app.css */
-.glass {
-  /* Adjust blur intensity */
-  backdrop-filter: blur(15px);          /* Default: 10px */
-  -webkit-backdrop-filter: blur(15px);
-  
-  /* Adjust transparency */
-  background: rgba(255, 255, 255, 0.15); /* Default: 0.1 */
-  
-  /* Adjust border */
-  border: 1px solid rgba(255, 255, 255, 0.25); /* Default: 0.18 */
-  
-  /* Adjust shadow */
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15); /* Default: 0.1 */
 }
 ```
 
@@ -475,39 +337,6 @@ npm run lint
 
 # Format code
 npm run format
-```
-
-### Testing
-
-```bash
-# Run unit tests
-npm run test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run E2E tests
-npm run test:e2e
-
-# Test PWA functionality
-npm run build && npm run preview
-# Then use Lighthouse in DevTools
-```
-
-### Code Quality
-
-```bash
-# ESLint
-npm run lint
-
-# Prettier
-npm run format
-
-# TypeScript type checking
-npm run check
-
-# Run all quality checks
-npm run validate
 ```
 
 ---
@@ -648,10 +477,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [Full docs](https://github.com/yourusername/radio-player/wiki)
-- **Issues**: [Report bugs](https://github.com/yourusername/radio-player/issues)
-- **Discussions**: [Community forum](https://github.com/yourusername/radio-player/discussions)
-- **Email**: support@yourapp.com
+- **Documentation**: [Full docs](https://github.com/loluwafemi/radionet)
+- **Issues**: [Report bugs](https://github.com/loluwafemi/radionet)
+- **Discussions**: [Community forum](https://github.com/loluwafemi/radionet)
+- **Email**: shokefunfemi@gmail.com
 
 ---
 
@@ -696,9 +525,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔒 Security
 
 - All streams use HTTPS
-- No user data collected without consent
+- No user data collected
 - localStorage for local preferences only
-- No third-party trackers
 - Content Security Policy implemented
 - Regular dependency updates
 
@@ -720,6 +548,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ using SvelteKit**
 
-[⬆ Back to Top](#-radio-player---modern-glassmorphic-web-app)
+[⬆ Back to Top](#-radionet---modern-radio-streaming-app)
 
 </div>
