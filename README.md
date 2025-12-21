@@ -18,9 +18,9 @@
 
 ## 🎨 Screenshots
 <div align="center" style="display: flex; flex-direction: row;">
-<img src="./static/radio-white.png" alt="Description of image" width="200" />
+<img src="./static/radio-white.png" alt="Description of image" width="150" />
 
-<img src="./static/radio-dark.png" alt="Description of image" width="200" />
+<img src="./static/radio-dark.png" alt="Description of image" width="150" />
 </div>
 
 
