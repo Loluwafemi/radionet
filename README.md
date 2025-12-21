@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![RadioNet Banner](https://via.placeholder.com/1200x400/1a1a1a/ff6666?text=Radio+Player)
+# 📻📡🛰️
 
 **A beautiful, modern radio streaming app with real-time audio visualization**
 
