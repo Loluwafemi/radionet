@@ -3,6 +3,7 @@
 	import { theme } from '$lib/stores/theme.svelte';
 	import { onMount } from 'svelte';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 
 
 	let { children } = $props();
