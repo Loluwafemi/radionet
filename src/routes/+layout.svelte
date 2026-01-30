@@ -6,7 +6,6 @@
 	import { injectAnalytics } from '@vercel/analytics/sveltekit'
 	import { dev } from '$app/environment';
 
-
 	let { children } = $props();
 
 	onMount(() => {
